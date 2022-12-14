@@ -19,7 +19,6 @@ Y_train = X_train.pop('isFraud')
 X_train.head()
 
 # Parameters used for the Neural Network model
-hidden_units = 128
 lr = 0.5
 hidden_layer_act = 'relu'
 output_layer_act = 'sigmoid'
@@ -34,9 +33,9 @@ X_test_sc = sc.transform(X_test)
 model = Sequential()
 
 # Adding multiple layers to the Sequential model
-model.add(Dense(hidden_units, input_dim=228, activation=hidden_layer_act))
-model.add(Dense(hidden_units, activation=hidden_layer_act))
-model.add(Dense(hidden_units, activation=hidden_layer_act))
+model.add(Dense(152, input_dim=228, activation=hidden_layer_act))
+model.add(Dense(64, activation=hidden_layer_act))
+model.add(Dense(32, activation=hidden_layer_act))
 model.add(Dense(1, activation=output_layer_act))
 print(model.summary())
 
